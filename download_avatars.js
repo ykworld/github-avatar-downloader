@@ -1,8 +1,9 @@
+require('dotenv').config();
 var request = require('request');
 var fs = require('fs');
 var params = process.argv.slice(2);
 var GITHUB_USER = "ykworld";
-var GITHUB_TOKEN = "8864bf92944159b9939ee3995f5850e8a9c76682";
+var GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 if (params[0] == undefined || params[1] == undefined) {
   console.log("Please enter two arguments!");
