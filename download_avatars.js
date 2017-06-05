@@ -4,6 +4,11 @@ var params = process.argv.slice(2);
 var GITHUB_USER = "ykworld";
 var GITHUB_TOKEN = "8864bf92944159b9939ee3995f5850e8a9c76682";
 
+if (params[0] == undefined || params[1] == undefined) {
+  console.log("Please enter two arguments!");
+  return;
+}
+
 console.log('Welcome to the GitHub Avatar Downloader!');
 
 function getRepoContributors(repoOwner, repoName, cb) {
