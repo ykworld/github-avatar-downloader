@@ -1,5 +1,6 @@
 var request = require('request');
 var fs = require('fs');
+var params = process.argv.slice(2);
 var GITHUB_USER = "ykworld";
 var GITHUB_TOKEN = "8864bf92944159b9939ee3995f5850e8a9c76682";
 
@@ -27,7 +28,7 @@ function downloadImageByURL(url, filePath) {
        .pipe(fs.createWriteStream(filePath));
 }
 
-getRepoContributors("jquery", "jquery", function(err, result) {
+getRepoContributors(params[0], params[1], function(err, result) {
   console.log("Errors:", err);
 
   for (idx in result) {
